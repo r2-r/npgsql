@@ -1665,7 +1665,7 @@ namespace Npgsql
             Contract.Ensures(State == newState);
             Contract.Ensures(IsInUserAction);
 
-            if (!_userLock.Wait(0))
+            if (!_userLock.Wait(1))
             {
                 switch (State) {
                 case ConnectorState.Closed:
